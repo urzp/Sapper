@@ -1,0 +1,45 @@
+body {
+  margin: 0; }
+
+header {
+  height: 20vh;
+  background-image: url(../img/nav-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  header .logo {
+    float: left;
+    width: 20%;
+    height: 20vh; }
+    header .logo div {
+      margin: 0 auto;
+      text-align: center; }
+      header .logo div a {
+        font-size: 20px;
+        font-family: "Comfortaa";
+        color: white;
+        text-shadow: 0px 0px 5px black;
+        text-decoration: none; }
+      header .logo div img {
+        height: 15vh; }
+  header .menu {
+    float: left;
+    width: 80%;
+    height: 20vh; }
+    header .menu ul {
+      width: 80%;
+      margin-left: 5%;
+      margin-top: 8vh; }
+      header .menu ul li {
+        display: inline-block;
+        margin: 0 5%; }
+        header .menu ul li a {
+          font-size: 20px;
+          font-family: "Comfortaa";
+          color: white;
+          text-shadow: 0px 0px 5px black;
+          text-decoration: none;
+          text-transform: capitalize; }
+        header .menu ul li a:hover {
+          color: #e51212; }
+
+/*# sourceMappingURL=style.css.map */

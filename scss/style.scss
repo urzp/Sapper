@@ -1,5 +1,10 @@
+*{
+    
+}
+
 body{
-    margin: 0;
+    margin: 0; 
+    
 }
 
 header{
@@ -7,7 +12,6 @@ header{
     background-image: url(../img/nav-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    
     .logo{
         float: left;
         width: 20%;
@@ -28,12 +32,10 @@ header{
             } 
         }
     }
-    
     .menu{
         float: left;
         width: 80%;
         height: 20vh;
-        
         ul{
             width: 80%;
             margin-left: 5%;
@@ -50,16 +52,145 @@ header{
                     text-decoration: none; 
                     text-transform: capitalize;
                 }
-                
                 a:hover {
                   color: rgb(229, 18, 18);  
                 }
             }
-
         }
-        
     }
-    
 }
 
+main{
+   height: 70vh; 
+    .main_left{
+        float: left;
+        width: 25%;
+        height: 70vh; 
+        .clock{
+            width: 100%;
+            height: 40vh;
+            text-align: center;
+            font-size: 30px;
+            font-family: "a_Bragga";
+            color: rgb( 99, 135, 45 );
+            P{
+                position: relative;
+                top: 30px;
+                margin: 0;
+            }
+        }
+        .solder{
+            width: 100%;
+            height: 30vh;
+            img{
+                display: block;
+                margin: 0 auto;
+                position: relative;
+                top: 5vh;
+                height: 25vh;
+            }   
+        }
+    }
+    .main_middle{
+        float: left;
+        width: 50%;
+        height: 70vh;
+        .board{
+            margin: 5vh auto;
+            height: 60vh;
+            width: 60vh;
+            cursor: pointer;
+            .row{
+                height: 6.6vh;
+                .cell:hover{
+                    box-shadow:0 0 50px #40cdeb;
+                    background-color: rgb(155, 213, 223);
+                    border-color: rgb(33, 210, 252);
+                }
+                .cell{
+                    float: left;
+                    height: 6.4vh; 
+                    width: 6.4vh;
+                    margin: 0.1vh;
+                    border-radius: 5px;
+                    border-width: 0.3vh;
+                    border-color: rgb( 149, 149, 149 );
+                    border-style: solid;
+                    background-color: rgb( 196, 223, 155 );
+                    box-sizing: border-box;
+                }
+            }
+        }   
+    }
+    .main_right{
+        float: left;
+        width: 25%;
+        height: 70vh; 
+        .general{
+            height: 35vh;
+            img{
+                margin: 0 auto;
+                margin-top: -5vh;
+                height: 30vh;
+                display: block;
+                
+                //left: 50%;
+                //top: -12vh;
+            }
+        }
+        .flags{
+            height: 20vh;
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                    display: inline-block;   
+                    img{
+                        margin: 0;
+                        padding: 0;
+                        height: 5vh;
+                    }
+                }
+            }
+        }
+        .panel{
+            height: 20vh;
+            .row{
+                height: 6.6vh;
+                width: 6.6*3vh;
+                margin: 0 auto;
+                .cell{
+                    float: left;
+                    height: 6.4vh; 
+                    width: 6.4vh;
+                    margin: 0.1vh;
+                    border-radius: 5px;
+                    border-width: 0.3vh;
+                    border-color: rgb( 149, 149, 149 );
+                    border-style: solid;
+                    background-color: rgb( 196, 223, 155 );
+                    box-sizing: border-box;
+                    
+                    
+                    img{
+                        display: block;
+                        margin: 0.5vh auto;
+                        height: 5.0vh;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+footer{
+    height: 10vh;  
+    background-image: url(../img/footerbackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 

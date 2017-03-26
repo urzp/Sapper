@@ -1,6 +1,8 @@
 *{
-    
+
 }
+
+
 
 body{
     margin: 0; 
@@ -106,6 +108,23 @@ main{
                     box-shadow:0 0 50px #40cdeb;
                     background-color: rgb(155, 213, 223);
                     border-color: rgb(33, 210, 252);
+                    //background-image: url(../img/shovel.png);
+                    //background-image: url(../img/flag.png);
+                    background-image: url(../img/none.png);
+                    //background-size: 1.7vh;
+                    //background-size: 3.7vh;
+                    background-size: 4.7vh;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                .open:hover, .mine:hover {
+                    box-shadow:0 0 0px #fff;
+                    background-color: #e1e1e1;
+                    border-color: rgb( 149, 149, 149 );
+                    background-image: url();
+                }
+                .mine{
+                    background-image: url();
                 }
                 .cell{
                     float: left;
@@ -118,6 +137,27 @@ main{
                     border-style: solid;
                     background-color: rgb( 196, 223, 155 );
                     box-sizing: border-box;
+                    p{
+                        color: #bbbbbb;
+                        text-align: center;
+                        font-size: 3vh;
+                        font-family: "Comfortaa";
+                        font-weight: bold;
+                        margin-top: 25%;
+                       
+                    }
+
+                    img{
+                        display: block;
+                        margin: 0.5vh auto;
+                        height: 5.0vh;
+                    } 
+                }
+                .open{
+                  background-color:  #e1e1e1;
+                }
+                .mine{
+                  background-color:  #e1e1e1;  
                 }
             }
         }   

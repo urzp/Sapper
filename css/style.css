@@ -82,7 +82,18 @@ main {
         main .main_middle .board .row .cell:hover {
           box-shadow: 0 0 50px #40cdeb;
           background-color: #9bd5df;
-          border-color: #21d2fc; }
+          border-color: #21d2fc;
+          background-image: url(../img/none.png);
+          background-size: 4.7vh;
+          background-position: center;
+          background-repeat: no-repeat; }
+        main .main_middle .board .row .open:hover, main .main_middle .board .row .mine:hover {
+          box-shadow: 0 0 0px #fff;
+          background-color: #e1e1e1;
+          border-color: #959595;
+          background-image: url(); }
+        main .main_middle .board .row .mine {
+          background-image: url(); }
         main .main_middle .board .row .cell {
           float: left;
           height: 6.4vh;
@@ -94,6 +105,21 @@ main {
           border-style: solid;
           background-color: #c4df9b;
           box-sizing: border-box; }
+          main .main_middle .board .row .cell p {
+            color: #bbbbbb;
+            text-align: center;
+            font-size: 3vh;
+            font-family: "Comfortaa";
+            font-weight: bold;
+            margin-top: 25%; }
+          main .main_middle .board .row .cell img {
+            display: block;
+            margin: 0.5vh auto;
+            height: 5.0vh; }
+        main .main_middle .board .row .open {
+          background-color: #e1e1e1; }
+        main .main_middle .board .row .mine {
+          background-color: #e1e1e1; }
   main .main_right {
     float: left;
     width: 25%;

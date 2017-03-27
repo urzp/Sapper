@@ -9,6 +9,8 @@ Sapper.Board = {};
 Sapper.constructors ={};
 Sapper.Board.Cells = [];
 
+
+
 Sapper.Board.init_board = function(){
     Sapper.Board.create_cells()
     Sapper.Board.mines_set()
@@ -83,6 +85,12 @@ Sapper.constructors.Cell = function(x,y,content){
 
 $('document').ready( function(){
     Sapper.Board.init_board();
+        $('.board').on( "click", ".cell", function() {
+        //alert( $(event.target).attr("mine") )
+        //alert( $(event.target).attr("id") ) ; 
+        $(this).addClass("open");
+        //alert( $(this).text() ) ; 
+    });
 })
 
 

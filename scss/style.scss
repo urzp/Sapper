@@ -117,13 +117,10 @@ main{
                     background-position: center;
                     background-repeat: no-repeat;
                 }
-                .open:hover, .mine:hover {
+                .open:hover {
                     box-shadow:0 0 0px #fff;
                     background-color: #e1e1e1;
                     border-color: rgb( 149, 149, 149 );
-                    background-image: url();
-                }
-                .mine{
                     background-image: url();
                 }
                 .cell{
@@ -151,6 +148,7 @@ main{
 
                     img{
                         visibility: hidden;
+                        display: block;
                         margin: 0.5vh auto;
                         height: 5.0vh;
                     } 
@@ -158,11 +156,21 @@ main{
                 .open{ 
                     background-color:  #e1e1e1;
                     p, img{
+                        display: block;
                         visibility: visible;   
                     }
                 }
-                .mine{
-                  background-color:  #e1e1e1;  
+                .flag{
+                    background-image: url(../img/flag.png);
+                    background-repeat: no-repeat;
+                    background-size: 3.7vh;
+                    background-position: center; 
+                }
+                .question{
+                    background-image: url(../img/question.png);
+                    background-repeat: no-repeat;
+                    background-size: 4.7vh;
+                    background-position: center; 
                 }
             }
         }   

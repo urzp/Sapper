@@ -87,12 +87,10 @@ main {
           background-size: 1.7vh;
           background-position: center;
           background-repeat: no-repeat; }
-        main .main_middle .board .row .open:hover, main .main_middle .board .row .mine:hover {
+        main .main_middle .board .row .open:hover {
           box-shadow: 0 0 0px #fff;
           background-color: #e1e1e1;
           border-color: #959595;
-          background-image: url(); }
-        main .main_middle .board .row .mine {
           background-image: url(); }
         main .main_middle .board .row .cell {
           float: left;
@@ -115,14 +113,24 @@ main {
             margin-top: 25%; }
           main .main_middle .board .row .cell img {
             visibility: hidden;
+            display: block;
             margin: 0.5vh auto;
             height: 5.0vh; }
         main .main_middle .board .row .open {
           background-color: #e1e1e1; }
           main .main_middle .board .row .open p, main .main_middle .board .row .open img {
+            display: block;
             visibility: visible; }
-        main .main_middle .board .row .mine {
-          background-color: #e1e1e1; }
+        main .main_middle .board .row .flag {
+          background-image: url(../img/flag.png);
+          background-repeat: no-repeat;
+          background-size: 3.7vh;
+          background-position: center; }
+        main .main_middle .board .row .question {
+          background-image: url(../img/question.png);
+          background-repeat: no-repeat;
+          background-size: 4.7vh;
+          background-position: center; }
   main .main_right {
     float: left;
     width: 25%;

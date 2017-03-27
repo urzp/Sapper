@@ -83,6 +83,8 @@ main {
           box-shadow: 0 0 50px #40cdeb;
           background-color: #9bd5df;
           border-color: #21d2fc;
+          background-image: url(../img/shovel.png);
+          background-size: 1.7vh;
           background-position: center;
           background-repeat: no-repeat; }
         main .main_middle .board .row .open:hover, main .main_middle .board .row .mine:hover {
@@ -104,6 +106,7 @@ main {
           background-color: #c4df9b;
           box-sizing: border-box; }
           main .main_middle .board .row .cell p {
+            visibility: hidden;
             color: #bbbbbb;
             text-align: center;
             font-size: 3vh;
@@ -111,11 +114,13 @@ main {
             font-weight: bold;
             margin-top: 25%; }
           main .main_middle .board .row .cell img {
-            display: block;
+            visibility: hidden;
             margin: 0.5vh auto;
             height: 5.0vh; }
         main .main_middle .board .row .open {
           background-color: #e1e1e1; }
+          main .main_middle .board .row .open p, main .main_middle .board .row .open img {
+            visibility: visible; }
         main .main_middle .board .row .mine {
           background-color: #e1e1e1; }
   main .main_right {

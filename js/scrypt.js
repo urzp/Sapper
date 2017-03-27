@@ -58,7 +58,6 @@ Sapper.Board.count_near_mines = function(cell){
     })
      return mine_count;
 }
-
 Sapper.Board.render = function(){
     Sapper.Board.Cells.forEach(function(row,i){
         row.forEach(function(cell,x){

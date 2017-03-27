@@ -11,24 +11,29 @@ Sapper.Board.Cells = [];
 
 Sapper.Board.init_board = function(){
     Sapper.Board.create_cells()
+    Sapper.Board.mines_set()
     Sapper.Board.set_numbers()
     Sapper.Board.render()
 };
 Sapper.Board.create_cells = function(){
-var i,x,y,count_mines=0, mine;
-    i=0;
+var x,y;
     for(y = 0; y<10; y++){
         Sapper.Board.Cells[y] = [];
         for(x = 0; x<10; x++){
-            if ((Math.floor(Math.random()*10) > 5) && (count_mines<=10) ){
-                count_mines++;
-                mine = "mine";
-            } else { mine = ""; }
-            Sapper.Board.Cells[y][x] = new Sapper.constructors.Cell(x,y,mine);
-            i++;
+            Sapper.Board.Cells[y][x] = new Sapper.constructors.Cell(x,y,""); 
         }
     } 
 }
+Sapper.Board.mines_set = function(){
+    var x,y,i;
+    for(i=1; i<=10; i++ ){
+       x = Math.floor(Math.random()*9); 
+       y = Math.floor(Math.random()*9);
+       if ((Sapper.Board.Cells[y][x]).content != "mine"){
+           (Sapper.Board.Cells[y][x]).content = "mine";
+       } else {i--}
+    }
+};
 Sapper.Board.set_numbers = function(){
     Sapper.Board.Cells.forEach(function(row,i){
         row.forEach(function(cell,x){
@@ -46,7 +51,6 @@ Sapper.Board.count_near_mines = function(cell){
         y = der[0]+cell.position[0];
         x = der[1]+cell.position[1];
         if ((y >= 0)&&(x >= 0)&&(x < 10)&&(y < 10)){
-            //alert( (Sapper.Board.Cells[y][x]).content == "mine" )
             if ((Sapper.Board.Cells[y][x]).content == "mine"){
                 mine_count++;
             }
@@ -54,9 +58,8 @@ Sapper.Board.count_near_mines = function(cell){
     })
      return mine_count;
 }
+
 Sapper.Board.render = function(){
-    //$("#cell00").append("<p>1</p>");
-    //alert($("#cell01"));
     Sapper.Board.Cells.forEach(function(row,i){
         row.forEach(function(cell,x){
             id_cell = '#cell'+(cell.position[0]).toString(16)+(cell.position[1]).toString(16);
@@ -70,6 +73,7 @@ Sapper.Board.render = function(){
     }); 
 }
 
+
 Sapper.constructors.Cell = function(x,y,content){
   this.position = [y,x];
   this.open = false;
@@ -82,27 +86,6 @@ $('document').ready( function(){
     Sapper.Board.init_board();
 })
 
-/*
-Sapper.define = function(namespace){
-    var parts = namespace.split("."),
-        parent = Sapper,
-        i;
 
-    if (parts[0] == "Sapper") {
-        parts = parts.slice(1);
-    }
-
-    for(i = 0; i < parts.length; i++){
-
-        if (typeof parent[parts[i]] == "undefind") {
-           parent[parts[i]] = {}; 
-        }
-
-        parent = parent[parts[i]];
-    }
-      return    parent;
-};
-
-*/
 
 

@@ -116,7 +116,6 @@ main{
                     //background-size: 4.7vh;
                     background-position: center;
                     background-repeat: no-repeat;
-                    
                 }
                 .open:hover {
                     box-shadow:0 0 0px #fff;
@@ -221,6 +220,7 @@ main{
                     background-color: rgb(155, 213, 223);
                     border-color: rgb(33, 210, 252);
                 }
+
                 .cell{
                     float: left;
                     height: 6.4vh; 
@@ -239,6 +239,9 @@ main{
                         margin: 0.5vh auto;
                         height: 5.0vh;
                     }
+                }
+                .in_use, .in_use:hover {
+                    background-color: rgb( 99, 135, 45 );
                 }
             }
 

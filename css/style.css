@@ -182,6 +182,8 @@ main {
             display: block;
             margin: 0.5vh auto;
             height: 5.0vh; }
+        main .main_right .panel .row .in_use, main .main_right .panel .row .in_use:hover {
+          background-color: #63872d; }
 
 footer {
   height: 10vh;

@@ -5,6 +5,7 @@ Sapper.constants ={};
 // [y,x]
 Sapper.constants.neighbors = [ [-1,0],[-1,1],[0,1],[1,1],[1,0],[1,-1],[0,-1],[-1,-1] ];
 
+
 Sapper.Board = {};
 Sapper.constructors ={};
 Sapper.Board.Cells = [];
@@ -15,6 +16,11 @@ Sapper.constructors.Cell = function(x,y,content){
   this.open = false;
   this.content = content;
 };
+
+Sapper.int = function(){
+    Sapper.Board.init_board();
+    Sapper.Panel.init();
+}
 
 Sapper.Board.init_board = function(){
     Sapper.Board.create_cells()
@@ -83,7 +89,6 @@ Sapper.Panel.init = function(){
     this.use = "shovel";
     Sapper.Panel.render();
 };
-
 Sapper.Panel.render =function(){
     $(".panel_shovel").removeClass("in_use");
     $(".panel_question").removeClass("in_use");
@@ -96,11 +101,7 @@ Sapper.Panel.render =function(){
     $(".board .row .cell").addClass("use_"+Sapper.Panel.use);
 }
 
-
-
-$('document').ready( function(){
-    Sapper.Board.init_board();
-    Sapper.Panel.init();
+Sapper.controls = function(){
     $('.board').on( "click", ".cell", function() {
         switch(Sapper.Panel.use){
             case "shovel":
@@ -117,15 +118,27 @@ $('document').ready( function(){
                 $(this).toggleClass("flag"); 
             break 
         }
-           
+        var summ = $('.flags ul li').length + $('.flag').length 
+        
+        if ( summ > 10){
+            $('.flags ul li:last-child').remove();
+        }
+        if ( summ < 10){
+            alert("add")
+           $('.flags ul').add('<li><img src="img/flag.png" alt="flag"></li>')
+        }
         
         
     });
     $(".panel").on("click", ".cell", function(){
         Sapper.Panel.use = $(this).attr("name")
-        Sapper.Panel.render();
-        
+        Sapper.Panel.render(); 
     })
+} 
+
+$('document').ready( function(){
+    Sapper.int();
+    Sapper.controls();
 })
 
 

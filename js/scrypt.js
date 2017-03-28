@@ -2,7 +2,7 @@
 var Sapper = Sapper || {};
 
 Sapper.constants ={};
-// [y,x]
+// cell position [y,x]
 Sapper.constants.neighbors = [ [-1,0],[-1,1],[0,1],[1,1],[1,0],[1,-1],[0,-1],[-1,-1] ];
 
 
@@ -103,39 +103,45 @@ Sapper.Panel.render =function(){
 
 Sapper.controls = function(){
     $('.board').on( "click", ".cell", function() {
-        switch(Sapper.Panel.use){
-            case "shovel":
-                $(this).removeClass("question");
-                $(this).removeClass("flag");
-                $(this).addClass("open"); 
-            break
-            case "question":
-                $(this).removeClass("flag");
-                $(this).toggleClass("question"); 
-            break
-            case "flag":
-                $(this).removeClass("question");
-                $(this).toggleClass("flag"); 
-            break 
-        }
-        var summ = $('.flags ul li').length + $('.flag').length 
-        if ( summ > 10){
-            $('.flags ul li:last-child').remove();
-        }
-        if ( summ < 10){
-           $('<li><img src="img/flag.png" alt="flag"></li>').appendTo('.flags ul');
-        }
-        if ($('.flag').length > 10) {
-            $(this).removeClass("flag");
-        }
-        
-        
+        alert ($(this).text() == "")
+        Sapper.controls.tools(this);
+        Sapper.controls.flags_count();
     });
     $(".panel").on("click", ".cell", function(){
         Sapper.Panel.use = $(this).attr("name")
         Sapper.Panel.render(); 
     })
 } 
+Sapper.controls.tools = function(cell){
+    switch(Sapper.Panel.use){
+        case "shovel":
+            $(cell).removeClass("question");
+            $(cell).removeClass("flag");
+            $(cell).addClass("open"); 
+        break
+        case "question":
+            $(cell).removeClass("flag");
+            $(cell).toggleClass("question"); 
+        break
+        case "flag":
+            $(cell).removeClass("question");
+            $(cell).toggleClass("flag"); 
+        break 
+    }
+}
+Sapper.controls.flags_count = function(){
+    var summ = $('.flags ul li').length + $('.flag').length 
+    if ( summ > 10){
+        $('.flags ul li:last-child').remove();
+    }
+    if ( summ < 10){
+       $('<li><img src="img/flag.png" alt="flag"></li>').appendTo('.flags ul');
+    }
+    if ($('.flag').length > 10) {
+        $(this).removeClass("flag");
+    } 
+}
+
 
 $('document').ready( function(){
     Sapper.int();

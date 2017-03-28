@@ -116,6 +116,7 @@ main{
                     //background-size: 4.7vh;
                     background-position: center;
                     background-repeat: no-repeat;
+                    
                 }
                 .open:hover {
                     box-shadow:0 0 0px #fff;
@@ -215,6 +216,11 @@ main{
                 height: 6.6vh;
                 width: 6.6*3vh;
                 margin: 0 auto;
+                .cell:hover {
+                    box-shadow:0 0 50px #40cdeb;
+                    background-color: rgb(155, 213, 223);
+                    border-color: rgb(33, 210, 252);
+                }
                 .cell{
                     float: left;
                     height: 6.4vh; 
@@ -226,7 +232,7 @@ main{
                     border-style: solid;
                     background-color: rgb( 196, 223, 155 );
                     box-sizing: border-box;
-                    
+                    cursor: pointer;
                     
                     img{
                         display: block;

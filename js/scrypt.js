@@ -89,6 +89,11 @@ Sapper.Panel.render =function(){
     $(".panel_question").removeClass("in_use");
     $(".panel_flag").removeClass("in_use");
     $(".panel_"+this.use).addClass("in_use");
+    
+    $(".board .row .cell").removeClass("use_shovel");
+    $(".board .row .cell").removeClass("use_question");
+    $(".board .row .cell").removeClass("use_flag");
+    $(".board .row .cell").addClass("use_"+Sapper.Panel.use);
 }
 
 
@@ -97,14 +102,29 @@ $('document').ready( function(){
     Sapper.Board.init_board();
     Sapper.Panel.init();
     $('.board').on( "click", ".cell", function() {
-        //alert( $(event.target).attr("mine") )
-        //alert( $(event.target).attr("id") ) ; 
-        $(this).addClass("open");
-        //alert( $(this).text() ) ; 
+        switch(Sapper.Panel.use){
+            case "shovel":
+                $(this).removeClass("question");
+                $(this).removeClass("flag");
+                $(this).addClass("open"); 
+            break
+            case "question":
+                $(this).removeClass("flag");
+                $(this).toggleClass("question"); 
+            break
+            case "flag":
+                $(this).removeClass("question");
+                $(this).toggleClass("flag"); 
+            break 
+        }
+           
+        
+        
     });
     $(".panel").on("click", ".cell", function(){
         Sapper.Panel.use = $(this).attr("name")
         Sapper.Panel.render();
+        
     })
 })
 

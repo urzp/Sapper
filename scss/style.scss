@@ -104,25 +104,34 @@ main{
             cursor: pointer;
             .row{
                 height: 6.6vh;
-                .cell:hover{
+                
+                .cell:hover:not(.open) {
                     box-shadow:0 0 50px #40cdeb;
                     background-color: rgb(155, 213, 223);
                     border-color: rgb(33, 210, 252);
-                    background-image: url(../img/shovel.png);
-                    //background-image: url(../img/flag.png);
-                    //background-image: url(../img/none.png);
-                    background-size: 1.7vh;
-                    //background-size: 3.7vh;
-                    //background-size: 4.7vh;
                     background-position: center;
                     background-repeat: no-repeat;
                 }
+                
+                .use_shovel:hover:not(.open){
+                    background-image: url(../img/shovel.png);
+                    background-size: 1.7vh;
+                }
+                .use_question:hover:not(.open){
+                    background-image: url(../img/question.png);
+                    background-size: 3.7vh;
+                }
+                .use_flag:hover:not(.open){
+                    background-image: url(../img/flag.png);
+                    background-size: 4.7vh;
+                }
+                /*
                 .open:hover {
                     box-shadow:0 0 0px #fff;
                     background-color: #e1e1e1;
                     border-color: rgb( 149, 149, 149 );
                     background-image: url();
-                }
+                }*/
                 .cell{
                     
                     float: left;

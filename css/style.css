@@ -72,6 +72,13 @@ main {
     float: left;
     width: 50%;
     height: 70vh; }
+    main .main_middle .boom {
+      display: none; }
+      main .main_middle .boom img {
+        position: fixed;
+        top: 30vh;
+        left: 30%;
+        height: 50.0vh; }
     main .main_middle .board {
       margin: 5vh auto;
       height: 60vh;

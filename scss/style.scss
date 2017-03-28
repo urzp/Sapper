@@ -97,7 +97,17 @@ main{
         float: left;
         width: 50%;
         height: 70vh;
+        .boom {
+            display: none;
+            img{
+                position: fixed;
+                top: 30vh;
+                left: 30%;
+                height: 50.0vh;
+            }
+        }
         .board{
+            //display: none;
             margin: 5vh auto;
             height: 60vh;
             width: 60vh;
@@ -162,6 +172,7 @@ main{
                         height: 5.0vh;
                     } 
                 }
+
                 .open{ 
                     background-color:  #e1e1e1;
                     p, img{

@@ -79,6 +79,7 @@ Sapper.Board.render = function(){
                 $(id_cell).append("<p>"+(cell.content).toString(16)+"</p>");
             }else{
                $(id_cell).append('<img src="img/mine.png" alt="">');
+                $(id_cell).addClass('mine');
             }
             
         }) 
@@ -103,9 +104,26 @@ Sapper.Panel.render =function(){
 
 Sapper.controls = function(){
     $('.board').on( "click", ".cell", function() {
-        alert ($(this).text() == "")
-        Sapper.controls.tools(this);
-        Sapper.controls.flags_count();
+        
+            Sapper.controls.tools(this);
+            Sapper.controls.flags_count();  
+        if ( ($(this).text() == "")&&(Sapper.Panel.use == "shovel") ){
+            
+            $(this).html('');
+            $(this).append('<img src="img/afterboom.png" alt="">');
+            $(".boom").show("scale",100);
+            $(".boom").hide("pulsate",500); 
+            $( "body" ).hide("shake",200);
+            $( "body" ).show("shake",200); 
+            $( ".mine").addClass("open");
+            $(".flag.mine").html('');
+            $(".solder").html('');
+            $(".general").html('');
+            $(".flag.mine").append('<img src="img/ok.png" alt="">');
+            $(".solder").append('<img src="img/solder_2.png" alt="solder">');
+            $(".general").append('<img src="img/General_2.png" alt="general">');
+        }
+
     });
     $(".panel").on("click", ".cell", function(){
         Sapper.Panel.use = $(this).attr("name")
@@ -146,6 +164,7 @@ Sapper.controls.flags_count = function(){
 $('document').ready( function(){
     Sapper.int();
     Sapper.controls();
+
 })
 
 

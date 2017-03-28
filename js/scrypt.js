@@ -119,13 +119,14 @@ Sapper.controls = function(){
             break 
         }
         var summ = $('.flags ul li').length + $('.flag').length 
-        
         if ( summ > 10){
             $('.flags ul li:last-child').remove();
         }
         if ( summ < 10){
-            alert("add")
-           $('.flags ul').add('<li><img src="img/flag.png" alt="flag"></li>')
+           $('<li><img src="img/flag.png" alt="flag"></li>').appendTo('.flags ul');
+        }
+        if ($('.flag').length > 10) {
+            $(this).removeClass("flag");
         }
         
         

@@ -104,6 +104,13 @@ Sapper.Board.boom = function(cell){
     $(".general").append('<img src="img/General_2.png" alt="general">');
     clearInterval(Sapper.clock.timerId);
 }
+Sapper.Board.win = function(){
+    //alert("win");
+    $(".boom").html('');
+    $(".boom").append('<img src="img/win.png" alt="solder">');
+    $(".boom").show("fade",1000);
+    clearInterval(Sapper.clock.timerId);
+}
 
 Sapper.Panel.init = function(){
     this.use = "shovel";
@@ -122,14 +129,16 @@ Sapper.Panel.render =function(){
 }
 
 
+
 Sapper.controls = function(){
     $('.board').on( "click", ".cell", function() {
         
-            Sapper.controls.tools(this);
-            Sapper.controls.flags_count();  
+        Sapper.controls.tools(this);
+        Sapper.controls.flags_count();  
         if ( ($(this).text() == "")&&(Sapper.Panel.use == "shovel") ){
             Sapper.Board.boom(this);
         }
+        Sapper.controls.win();
 
     });
     $(".panel").on("click", ".cell", function(){
@@ -166,7 +175,11 @@ Sapper.controls.flags_count = function(){
         $(this).removeClass("flag");
     } 
 }
-
+Sapper.controls.win = function (){
+    if ($('.flag.mine').length == 10){
+       Sapper.Board.win() 
+    }
+}
 
 Sapper.clock.formatTime = function(time) {
     

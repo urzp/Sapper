@@ -101,7 +101,7 @@ Sapper.Board.boom = function(cell){
     $(".flag.mine").append('<img src="img/ok.png" alt="">');
     $(".solder").append('<img src="img/solder_2.png" alt="solder">');
     $(".general").append('<img src="img/General_2.png" alt="general">');
-    clearInterval(timerId);
+    clearInterval(Sapper.clock.timerId);
 }
 
 Sapper.Panel.init = function(){
@@ -193,26 +193,10 @@ Sapper.clock.update = function(){
  }
 
 
-/*
-var timer = $.timer(function() {
-    //alert(timer);
-});
-
-
-timer.set({ time : 5000, autostart : true });
-*/
-
 $('document').ready( function(){
     Sapper.int();
     Sapper.controls();
-    
-    $("#Start").click(function() {
-        
-       timerId = setInterval(Sapper.clock.update ,10);
-        //clearInterval(timerId);
-    });
-
-
+    Sapper.clock.timerId = setInterval(Sapper.clock.update ,10);
 })
 
 

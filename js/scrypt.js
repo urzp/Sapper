@@ -10,6 +10,7 @@ Sapper.Board = {};
 Sapper.constructors ={};
 Sapper.Board.Cells = [];
 Sapper.Panel = {};
+Sapper.clock ={};
 
 Sapper.constructors.Cell = function(x,y,content){
   this.position = [y,x];
@@ -18,6 +19,7 @@ Sapper.constructors.Cell = function(x,y,content){
 };
 
 Sapper.int = function(){
+    Sapper.clock.time = 0;
     Sapper.Board.init_board();
     Sapper.Panel.init();
 }
@@ -122,6 +124,7 @@ Sapper.controls = function(){
             $(".flag.mine").append('<img src="img/ok.png" alt="">');
             $(".solder").append('<img src="img/solder_2.png" alt="solder">');
             $(".general").append('<img src="img/General_2.png" alt="general">');
+            clearInterval(timerId);
         }
 
     });
@@ -161,9 +164,51 @@ Sapper.controls.flags_count = function(){
 }
 
 
+Sapper.clock.formatTime = function(time) {
+    
+    var min = parseInt(time / 6000),
+        sec = parseInt(time / 100) - (min * 60),
+        hundredths = pad(time - (sec * 100) - (min * 6000), 2);
+    
+    return (min > 0 ? pad(min, 2) : "00") + ":" + pad(sec, 2) + ":" + hundredths;
+    
+    function pad(number, length) {
+        var str = '' + number;
+        while (str.length < length) {str = '0' + str;}
+        return str;
+    }
+    
+}
+
+
+
+
+Sapper.clock.update = function(){
+    Sapper.clock.time++;
+    var clock_time = Sapper.clock.formatTime(Sapper.clock.time)
+    $(".clock p").text(clock_time);
+ }
+
+
+/*
+var timer = $.timer(function() {
+    //alert(timer);
+});
+
+
+timer.set({ time : 5000, autostart : true });
+*/
+
 $('document').ready( function(){
     Sapper.int();
     Sapper.controls();
+    
+    $("#Start").click(function() {
+        
+       timerId = setInterval(Sapper.clock.update ,10);
+        //clearInterval(timerId);
+    });
+
 
 })
 

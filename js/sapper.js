@@ -29,6 +29,7 @@ Sapper.Board.init_board = function(){
     Sapper.Board.mines_set()
     Sapper.Board.set_numbers()
     Sapper.Board.render()
+    $('.board').show("fold",3000);
 };
 Sapper.Board.create_cells = function(){
 var x,y;
@@ -196,7 +197,9 @@ Sapper.clock.update = function(){
 $('document').ready( function(){
     Sapper.int();
     Sapper.controls();
+    setTimeout(function(){
     Sapper.clock.timerId = setInterval(Sapper.clock.update ,10);
+    }, 3000);
 })
 
 

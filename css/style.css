@@ -80,6 +80,7 @@ main {
         left: 30%;
         height: 50.0vh; }
     main .main_middle .board {
+      display: none;
       margin: 5vh auto;
       height: 60vh;
       width: 60vh;

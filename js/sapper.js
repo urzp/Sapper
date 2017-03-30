@@ -105,7 +105,7 @@ Sapper.Board.boom = function(cell){
     clearInterval(Sapper.clock.timerId);
 }
 Sapper.Board.win = function(){
-    //alert("win");
+    
     $(".boom").html('');
     $(".boom").append('<img src="img/win.png" alt="solder">');
     $(".boom").show("fade",1000);

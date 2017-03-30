@@ -42,6 +42,19 @@ header {
         header .menu ul li a:hover {
           color: #e51212; }
 
+main.home {
+  background-image: url("../img/main.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+main.about {
+  height: 200vh; }
+  main.about .main_left img {
+    display: block;
+    margin: 5% auto;
+    width: 90%; }
+
 main {
   height: 70vh; }
   main .main_left {
@@ -68,6 +81,11 @@ main {
         position: relative;
         top: 5vh;
         height: 25vh; }
+  main .main_middle.rules {
+    padding: 5vh 0;
+    color: #63872d;
+    font-size: 2.6vh;
+    font-family: "Comfortaa"; }
   main .main_middle {
     float: left;
     width: 50%;
@@ -148,6 +166,15 @@ main {
           background-repeat: no-repeat;
           background-size: 4.7vh;
           background-position: center; }
+  main .main_middle.about {
+    width: 70%;
+    padding: 5vh 0;
+    color: #63872d;
+    font-size: 2.6vh;
+    font-family: "Comfortaa";
+    font-style: italic; }
+    main .main_middle.about p {
+      text-indent: 10%; }
   main .main_right {
     float: left;
     width: 25%;
